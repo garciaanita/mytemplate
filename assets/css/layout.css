@@ -1,0 +1,163 @@
+/* HEADER */
+
+.site-header {
+  background: #f5f2e9;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0.5rem 0.4rem;
+}
+
+.brand-block {
+  max-width: 16rem;
+}
+
+.brand-name {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.brand-role {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* NAV */
+
+.site-nav {
+  font-size: 10px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* INTRO */
+
+.intro {
+  padding-top: 1.2rem;
+}
+
+.intro-title {
+  margin-top: 0.4rem;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.intro-meta {
+  border-left: 1px solid #d4cdbd;
+  padding-left: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+/* META LIST (intro) */
+
+.meta-list {
+  margin: 0;
+}
+
+.meta-row {
+  display: flex;
+  gap: 0.75rem;
+  border-top: 1px solid #ddd3bf;
+  padding-block: 0.35rem;
+}
+
+.meta-row:first-of-type {
+  border-top: none;
+}
+
+.meta-row dt {
+  min-width: 4rem;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #6b7280;
+}
+
+.meta-row dd {
+  margin: 0;
+}
+
+/* WORK: 4 COLUMN GRID */
+
+.work-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* móvil: se apilan */
+.work-grid {
+  grid-template-columns: 1fr;
+}
+
+/* tablet+ : 4 columnas */
+@media (min-width: 768px) {
+  .work-grid {
+    grid-template-columns: 0.8fr 1.1fr 2fr 1.1fr;
+  }
+}
+
+.work-header {
+  margin-top: 0.6rem;
+  border-bottom: 1px solid #c9c1ac;
+  padding-bottom: 0.3rem;
+}
+
+.work-row {
+  border-bottom: 1px solid #ded6c1;
+  padding-block: 0.5rem;
+}
+
+/* INFO */
+
+.info-grid {
+  margin-top: 0.4rem;
+}
+
+.info-lists {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .info-lists {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* CONTACT */
+
+.contact-grid {
+  align-items: flex-start;
+}
+
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* FOOTER */
+
+.site-footer {
+  border-top: 1px solid #c9c1ac;
+  padding: 0.8rem 0.5rem 1rem;
+  font-size: 10px;
+}

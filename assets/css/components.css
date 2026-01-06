@@ -1,66 +1,226 @@
-/* Encabezados de tabla */
+/* ===================================
+   COMPONENTS.CSS - Componentes
+   =================================== */
 
-.work-head {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: #6b7280;
-}
-
-/* Celdas */
-
-.work-year,
-.work-type,
-.work-role {
-  font-size: 11px;
-  color: #4b5563;
-}
-
-.work-main {
+/* Breadcrumb */
+.breadcrumb {
   font-size: 12px;
-}
-
-.work-title {
-  font-size: 13px;
+  margin-bottom: 40px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.1rem;
 }
 
-.work-desc {
-  color: #4b5563;
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1600px;
 }
 
-/* INFO LISTS */
-
-.info-lists ul {
-  list-style-type: square;
-  padding-left: 1rem;
-  margin: 0.3rem 0 0;
+.project-card {
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
 }
 
-.info-lists li {
-  margin-bottom: 0.1rem;
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* CONTACT */
-
-.contact-email {
-  font-size: 13px;
-  text-decoration: underline;
+.project-image {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background: var(--gray);
+  position: relative;
 }
 
-.inline-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.inline-links a {
+.project-card:hover .project-image img {
+  transform: scale(1.03);
+}
+
+/* Tag */
+.tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--accent);
+  color: white;
+  padding: 4px 10px;
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+}
+
+/* Project Info */
+.project-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.project-desc {
+  font-size: 12px;
+  opacity: 0.6;
+  line-height: 1.6;
+}
+
+/* Detail Modal */
+.detail {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg);
+  z-index: 2000;
+  overflow-y: auto;
+  padding: 120px 40px 80px;
+}
+
+.detail.active {
+  display: block;
+}
+
+/* Close Button */
+.close {
+  position: fixed;
+  top: 25px;
+  right: 40px;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: "Courier New", Courier, monospace;
+  transition: transform 0.2s ease;
+  z-index: 2001;
+}
+
+.close:hover {
+  transform: rotate(90deg);
+}
+
+/* Detail Hero */
+.detail-hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 60px;
+  max-width: 1400px;
+}
+
+.detail-main {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: var(--gray);
+}
+
+.detail-side {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--gray);
+}
+
+.detail-main img,
+.detail-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Detail Info */
+.detail-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+  max-width: 1400px;
+  margin-bottom: 40px;
+}
+
+.detail-info h2 {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.detail-info p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Meta Info */
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meta h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.meta p {
+  font-size: 13px;
+}
+
+/* ===================================
+   RESPONSIVE - TABLET
+   =================================== */
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-info {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - MÓVIL
+   =================================== */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .detail {
+    padding: 100px 20px 60px;
+  }
+
+  .close {
+    right: 20px;
+  }
+
+  .detail-hero {
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .detail-info {
+    gap: 30px;
+  }
 }

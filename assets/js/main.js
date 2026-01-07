@@ -36,7 +36,7 @@ document.addEventListener("click", (e) => {
 // ===================================
 const projectsData = {
   1: {
-    title: "QUANTUM/SHIFT 2039",
+    title: "(Project Name) (Fecha)",
     description:
       "Una exploración profunda de la tipografía cinética en entornos de realidad mixta. Este proyecto fusiona algoritmos generativos con principios clásicos de diseño tipográfico, creando experiencias visuales que responden en tiempo real a datos biométricos del público.",
     client: "Art Basel Miami",
@@ -46,7 +46,7 @@ const projectsData = {
     sideImage: "assets/images/project-1-side.jpg",
   },
   2: {
-    title: "AETHER/ARC 2041",
+    title: "(Project Name) (Fecha)",
     description:
       "Sistema modular de diseño para ecosistemas de transporte inteligente. Desarrollamos una identidad visual completa que se adapta dinámicamente a diferentes contextos urbanos, manteniendo coherencia visual mientras responde a las necesidades locales.",
     client: "Berlin Transit Authority",
@@ -56,7 +56,7 @@ const projectsData = {
     sideImage: "assets/images/project-2-side.jpg",
   },
   3: {
-    title: "NEURAL/WAVE 2038",
+    title: "(Project Name) (Fecha)",
     description:
       "Instalación interactiva que visualiza emociones colectivas mediante escultura lumínica. Utilizando sensores biométricos y machine learning, la obra responde en tiempo real a los estados emocionales del público, creando un diálogo visual entre tecnología y humanidad.",
     client: "Tokyo Digital Art Museum",
@@ -66,7 +66,7 @@ const projectsData = {
     sideImage: "assets/images/project-3-side.jpg",
   },
   4: {
-    title: "TERRA/FLUX 2040",
+    title: "(Project Name) (Fecha)",
     description:
       "Manifesto visual sobre arquitectura regenerativa. Este proyecto editorial combina visualización de datos climáticos con narrativa visual poética, presentando soluciones de diseño sostenible para el futuro de nuestras ciudades.",
     client: "Amsterdam Architecture Biennale",
@@ -76,7 +76,7 @@ const projectsData = {
     sideImage: "assets/images/project-4-side.jpg",
   },
   5: {
-    title: "CIPHER/BLOOM 2037",
+    title: "(Project Name) (Fecha)",
     description:
       "Identidad generativa para plataforma descentralizada de bienestar. El sistema visual evoluciona orgánicamente basándose en las interacciones de los usuarios, creando una marca viva que refleja la filosofía colaborativa de la plataforma.",
     client: "WellDAO Collective",
@@ -86,7 +86,7 @@ const projectsData = {
     sideImage: "assets/images/project-5-side.jpg",
   },
   6: {
-    title: "ORBIT/SHIFT 2039",
+    title: "(Project Name) (Fecha)",
     description:
       "Experiencia web inmersiva con storytelling paraláctico para narrativa de exploración espacial sostenible. Combinamos tecnología web avanzada con diseño cinematográfico para crear un viaje visual que inspira acción hacia un futuro espacial responsable.",
     client: "Nordic Space Agency",

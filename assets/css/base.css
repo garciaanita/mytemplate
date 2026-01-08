@@ -18,14 +18,26 @@
   --gray: #e0e0e0;
 }
 
-/* Body */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
 body {
-  font-family: "Courier New", Courier, monospace;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 13px;
+  margin: 0;
   line-height: 1.5;
-  overflow-x: hidden;
+  color: #111827;
+  background-color: #f5f2e9;
+
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
 }
 
 /* Tipografía */

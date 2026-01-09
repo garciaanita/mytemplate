@@ -14,35 +14,43 @@ A clean, professional aesthetic with generous white space design.
 **Includes a modular CSS** - Organized with `@import` for easy maintenance
 **Project Modal System** - Dynamic project detail views
 **Includes mobile navigation** - Smooth hamburger menu with overlay
+**Custom 404 Page** - Professional error handling with auto-redirect
+**Interactive Hero Section** - Animated bouncing icon and hover effects
 
 ## 🛠️ The tech stack:
 
-- **HTML5** - Semantic markup
-- **CSS3** - Modern CSS with custom properties, grid, and flexbox
-- **JavaScript (ES6+)** - Vanilla JS, and no dependencies
-- **Fluid typography as asked** - Using `clamp()` for responsive text
-- **Intersection observer API** - For scroll animations
+**HTML5** - Semantic markup
+**CSS3** - Modern CSS with custom properties, grid, and flexbox
+**JavaScript (ES6+)** - Vanilla JS, and no dependencies
+**Fluid typography as asked** - Using `clamp()` for responsive text
+**Intersection observer API** - For scroll animations
+**CSS Grid & Flexbox** - Modern layout techniques
 
 ## 📁 The project structure is...
 
 ```
 portfolio/
-├── index.html              # Main HTML file
-├── 404.html               # Custom error page
-├── README.md              # This file
+├── index.html              # Main HTML file with semantic structure
+├── 404.html               # Custom error page with auto-redirect
+├── README.md              # Project documentation (this file)
 ├── LICENSE                # MIT License
 ├── .gitignore            # Git ignore rules
+├── contributing.md
 ├── assets/
 │   ├── css/
-│   │   ├── index.css     # Main CSS (imports others)
-│   │   ├── base.css      # Reset & variables
-│   │   ├── layout.css    # Structure & layout
-│   │   └── components.css # UI components
+│   │   ├── index.css     # Main CSS (imports all modules)
+│   │   ├── base.css      # Reset, variables & base styles
+│   │   ├── layout.css    # Layout, grid & responsive structure
+│   │   └── components.css # UI components & interactions
+│   │   └── types.css     # Custom fonts (optional)
 │   ├── js/
-│   │   └── main.js       # Main JavaScript
-│   ├── images/           # Project images
-│   └── fonts/            # Custom fonts (if any)
-└── docs/                 # Documentation
+│   │   └── main.js       # Main JavaScript with modular functions
+│   ├── images/           # Project images & assets
+│   └── favicons/     # Favicon files (static & animated)
+│   └── fonts     # Favicon files (static & animated)
+│
+└── docs/                 # Additional documentation
+│   └── plan.md
 ```
 
 ## 🚀 Quick Start
@@ -128,6 +136,18 @@ Contributions, issues, and feature requests are always welcome here! :D
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## Roadmap
+
+Future enhancements planned:
+
+- [ ] Dark mode toggle
+- [ ] Blog section
+- [ ] Contact form with backend
+- [ ] CMS integration (optional)
+- [ ] Multi-language support
+- [ ] Advanced filtering for projects
+- [ ] Testimonials section
+
 ## Contact
 
 Ana García Peña
@@ -137,3 +157,5 @@ Project Link: [https://github.com/garciaanita/mytemplate](https://github.com/gar
 ## Acknowledgments
 
 My design was initially inspired by [Simantic Studio](https://readymag.com/designs/5959211/)
+
+Made with 💙 by Anita

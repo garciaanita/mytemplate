@@ -1,10 +1,8 @@
 # Portfolio Template - Clean Anita Style :D
 
-**Live Demo:** [https://your-username.github.io/portfolio](https://your-username.github.io/portfolio)
+**Live Demo:** [https://garciaanita.github.io/mytemplate]
 
 A minimal, elegant portfolio template for graphic designers and creative studios, inspired by contemporary design aesthetics with a touch of analogic essence ;D. Built with vanilla HTML, CSS, and JavaScript.
-
-![Portfolio Preview](assets/images/preview.png)
 
 ## ✨Some of the features here:
 

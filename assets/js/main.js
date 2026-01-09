@@ -12,31 +12,41 @@ menuToggle.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
-// Cerrar menú al hacer clic en un enlace
-const navLinks = document.querySelectorAll("nav a");
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    // Si es un enlace con ancla (#), prevenir comportamiento por defecto
-    if (link.getAttribute("href").startsWith("#")) {
+// ===================================
+// Smooth Scroll para navegación
+// ===================================
+document.addEventListener("DOMContentLoaded", function () {
+  // Seleccionar todos los enlaces que empiezan con #
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+  anchorLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
       e.preventDefault();
 
-      const targetId = link.getAttribute("href");
-      const target = document.querySelector(targetId);
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
 
-      if (target) {
-        // Cerrar menú móvil
+      if (targetElement) {
+        // Cerrar menú móvil si está abierto
         nav.classList.remove("active");
 
-        // Hacer scroll suave
-        target.scrollIntoView({
+        // Calcular posición con offset para el header
+        const headerHeight = 80;
+        const targetPosition =
+          targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = targetPosition - headerHeight;
+
+        // Scroll suave
+        window.scrollTo({
+          top: offsetPosition,
           behavior: "smooth",
-          block: "start",
         });
+
+        console.log("Navegando a:", targetId);
+      } else {
+        console.error("Elemento no encontrado:", targetId);
       }
-    } else {
-      // Para enlaces sin ancla, solo cerrar el menú
-      nav.classList.remove("active");
-    }
+    });
   });
 });
 
@@ -181,29 +191,6 @@ detail.addEventListener("click", (e) => {
 });
 
 // ===================================
-// Smooth Scroll
-// ===================================
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute("href");
-    const target = document.querySelector(targetId);
-
-    if (target) {
-      // Cerrar menú móvil si está abierto
-      nav.classList.remove("active");
-
-      // Scroll suave
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  });
-});
-
-// ===================================
 // Animaciones con Intersection Observer
 // ===================================
 const observerOptions = {
@@ -231,3 +218,96 @@ projectCards.forEach((card, index) => {
 // ===================================
 console.log("Portfolio initialized");
 console.log(`${projectCards.length} projects loaded`);
+
+//  ===================================
+// Animación de favicon
+// ====================================
+const favicons = ["assets/favicons/dragon.png"];
+
+let currentFavicon = 0;
+
+setInterval(() => {
+  currentFavicon = (currentFavicon + 1) % favicons.length;
+  const link =
+    document.querySelector("link[rel*='icon']") ||
+    document.createElement("link");
+  link.type = "image/png";
+  link.rel = "icon";
+  link.href = favicons[currentFavicon];
+  document.head.appendChild(link);
+}, 500); // Cambia cada 500ms
+
+console.log("Portfolio initialized");
+console.log(`${projectCards.length} projects loaded`);
+
+// ===================================
+// Icono Rebotando en Hero Section
+// ===================================
+const bouncingIcon = document.getElementById("bouncingIcon");
+
+if (bouncingIcon) {
+  // Posición inicial aleatoria
+  let x = Math.random() * (window.innerWidth - 80);
+  let y = Math.random() * (window.innerHeight - 80);
+
+  // Velocidad inicial
+  let speedX = 1;
+  let speedY = 1;
+
+  // Tamaño del icono
+  const iconSize = 80;
+
+  // Función para animar el icono
+  function animateBounce() {
+    // Obtener dimensiones del hero
+    const hero = document.querySelector(".hero");
+    if (!hero) return;
+
+    const heroRect = hero.getBoundingClientRect();
+    const maxX = heroRect.width - iconSize;
+    const maxY = heroRect.height - iconSize;
+
+    // Actualizar posición
+    x += speedX;
+    y += speedY;
+
+    // Rebotar en los bordes horizontales
+    if (x <= 0 || x >= maxX) {
+      speedX = -speedX;
+      x = x <= 0 ? 0 : maxX;
+    }
+
+    // Rebotar en los bordes verticales
+    if (y <= 0 || y >= maxY) {
+      speedY = -speedY;
+      y = y <= 0 ? 0 : maxY;
+    }
+
+    // Aplicar nueva posición
+    bouncingIcon.style.left = x + "px";
+    bouncingIcon.style.top = y + "px";
+
+    // Continuar animación
+    requestAnimationFrame(animateBounce);
+  }
+
+  // Posición inicial
+  bouncingIcon.style.left = x + "px";
+  bouncingIcon.style.top = y + "px";
+
+  // Iniciar animación
+  animateBounce();
+
+  // Recalcular en resize
+  window.addEventListener("resize", () => {
+    const hero = document.querySelector(".hero");
+    if (!hero) return;
+
+    const heroRect = hero.getBoundingClientRect();
+    const maxX = heroRect.width - iconSize;
+    const maxY = heroRect.height - iconSize;
+
+    x = Math.min(x, maxX);
+    y = Math.min(y, maxY);
+  });
+}

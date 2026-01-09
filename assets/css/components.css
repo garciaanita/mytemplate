@@ -2,6 +2,11 @@
    COMPONENTS.CSS - Componentes
    =================================== */
 
+/* Work Section */
+.work-section {
+  padding: 80px 0;
+  scroll-margin-top: 80px; /* ← AÑADE ESTA LÍNEA */
+}
 /* Breadcrumb */
 .breadcrumb {
   font-size: 12px;
@@ -189,9 +194,11 @@
 /* ===================================
    ABOUT SECTION
    =================================== */
+/* About Section */
 .about-section {
   padding: 80px 0;
   margin-top: 80px;
+  scroll-margin-top: 80px;
 }
 
 .about-container {
@@ -245,9 +252,10 @@
 }
 
 .info-block li {
-  font-size: 13px;
+  font-size: 11px;
   line-height: 1.8;
   padding: 2px 0;
+  font-family: jetbrains mono, monospace;
 }
 
 /* ===================================
@@ -256,7 +264,7 @@
 @media (max-width: 1024px) {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 200px;
   }
 
   .detail-hero {
@@ -270,7 +278,7 @@
 
   .about-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 70px;
   }
 
   .about-info {

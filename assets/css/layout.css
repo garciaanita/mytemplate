@@ -11,7 +11,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background: var(--bg);
+  background: var(--pink);
   z-index: 1000;
   border-bottom: 1px solid var(--border);
 }
@@ -85,6 +85,29 @@ main {
   position: relative;
   padding: 0 40px;
   margin-top: 80px;
+  overflow: hidden;
+}
+
+/* Icono rebotando */
+.bouncing-icon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.bouncing-icon:hover {
+  opacity: 1;
+}
+
+.bouncing-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
 }
 
 .hero-content {
@@ -93,7 +116,7 @@ main {
 }
 
 .hero-title {
-  font-size: clamp(4rem, 12vw, 10rem);
+  font-size: clamp(4rem, 12vw, 9rem);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -134,8 +157,8 @@ main {
 }
 
 .hero-cta:hover {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--accent);
+  color: var(--text);
 }
 
 .hero-scroll {
@@ -153,6 +176,7 @@ main {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: dm sans, sans-serif;
 }
 
 .scroll-line {
@@ -192,6 +216,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   font-size: 11px;
+  background-color: var(--pink);
+  font-family: dm sans, sans-serif;
 }
 
 .footer-links {
@@ -203,6 +229,44 @@ footer {
 .footer-links span {
   text-transform: uppercase;
 }
+
+/* Social Icons - TODO ESTO ES NUEVO */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-icons a {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.social-icons a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.social-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0);
+  transition: filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: brightness(0) invert(0);
+}
+
+/* ===================================
+   RESPONSIVE - TABLET
+   =================================== */
 
 /* ===================================
    RESPONSIVE - TABLET
@@ -237,6 +301,7 @@ footer {
 
   .hero-title {
     font-size: 3rem;
+    color: var(--pink);
   }
 
   .hero-statement {

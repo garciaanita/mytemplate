@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>404 - Page Not Found | (NAME)</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg: #f5f5f0;
+        --text: #1a1a1a;
+        --accent: #ff0000;
+      }
+
+      body {
+        font-family: "jetbrains mono", monospace, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .error-container {
+        text-align: center;
+        max-width: 600px;
+      }
+
+      .error-code {
+        font-size: clamp(6rem, 15vw, 12rem);
+        font-weight: 400;
+        line-height: 1;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+      }
+
+      .error-title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+
+      .error-message {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        opacity: 0.8;
+      }
+
+      .error-actions {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 40px;
+        border: 1px solid var(--text);
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: var(--text);
+        font-family: "dm sans", sans-serif;
+      }
+
+      .btn:hover {
+        background: var(--text);
+        color: var(--bg);
+      }
+
+      .btn-primary {
+        background: var(--text);
+        color: var(--bg);
+      }
+
+      .btn-primary:hover {
+        background: transparent;
+        color: var(--text);
+      }
+
+      .error-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        opacity: 0.03;
+      }
+
+      .error-animation::before {
+        content: "404";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50vw;
+        font-weight: 400;
+        color: var(--text);
+      }
+
+      @media (max-width: 768px) {
+        .error-actions {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-animation"></div>
+
+    <div class="error-container">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page Not Found</h1>
+      <p class="error-message">
+        The page you're looking for doesn't exist or has been moved. Let's get
+        you back on track.
+      </p>
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <a href="index.html#work" class="btn">View Projects</a>
+      </div>
+    </div>
+
+    <script>
+      // Redirect after 10 seconds if no action
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 10000);
+
+      // Log 404 error (optional - for analytics)
+      console.log("404 Error - Page not found:", window.location.href);
+    </script>
+  </body>
+</html>

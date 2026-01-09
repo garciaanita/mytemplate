@@ -62,7 +62,7 @@ Project images in `assets/images/`
 
 ### 3. Customize content
 
-Edit `index.html` to update:
+to update the following just edit `index.html` :
 
 - Studio name and contact information
 - Project titles and descriptions
@@ -71,7 +71,7 @@ Edit `index.html` to update:
 
 ### 4. Update project data
 
-Edit `assets/js/main.js` to modify the `projectsData` object with your project information.
+Edit `assets/js/main.js` in order to modify the `projectsData` object.
 
 ### 5. Deploy
 
@@ -83,7 +83,7 @@ Site live at `https://garciaanita.github.io/mytemplate`
 
 ### Colors
 
-Edit CSS variables in `assets/css/base.css`:
+CSS variables are mainly edited in `assets/css/base.css`:
 
 ```css
 :root {

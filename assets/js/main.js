@@ -15,8 +15,28 @@ menuToggle.addEventListener("click", () => {
 // Cerrar menú al hacer clic en un enlace
 const navLinks = document.querySelectorAll("nav a");
 navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("active");
+  link.addEventListener("click", (e) => {
+    // Si es un enlace con ancla (#), prevenir comportamiento por defecto
+    if (link.getAttribute("href").startsWith("#")) {
+      e.preventDefault();
+
+      const targetId = link.getAttribute("href");
+      const target = document.querySelector(targetId);
+
+      if (target) {
+        // Cerrar menú móvil
+        nav.classList.remove("active");
+
+        // Hacer scroll suave
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    } else {
+      // Para enlaces sin ancla, solo cerrar el menú
+      nav.classList.remove("active");
+    }
   });
 });
 
@@ -166,8 +186,15 @@ detail.addEventListener("click", (e) => {
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
+
+    const targetId = this.getAttribute("href");
+    const target = document.querySelector(targetId);
+
     if (target) {
+      // Cerrar menú móvil si está abierto
+      nav.classList.remove("active");
+
+      // Scroll suave
       target.scrollIntoView({
         behavior: "smooth",
         block: "start",

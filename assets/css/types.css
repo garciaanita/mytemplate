@@ -1,6 +1,21 @@
 /* 1) Conectar los archivos locales (ruta desde /css → /fonts = ../fonts) */
 @font-face {
   font-family: "JetBrains Mono";
+  src: url("../fonts/JetBrainsMono-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../fonts/JetBrainsMono-Thin.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
   src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
